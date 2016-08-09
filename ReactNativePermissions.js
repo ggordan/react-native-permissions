@@ -25,6 +25,7 @@ const RNPTypes = {
 		'event',
 		'photos',
 		'notification',
+		'photo',
 	]
 }
 
