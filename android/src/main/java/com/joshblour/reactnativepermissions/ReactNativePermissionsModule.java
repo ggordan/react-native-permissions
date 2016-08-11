@@ -24,6 +24,7 @@ import java.util.Locale;
 public class ReactNativePermissionsModule extends ReactContextBaseJavaModule {
   private final ReactApplicationContext reactContext;
   private final PermissionsModule mPermissionsModule;
+  private final NotificationManagerCompat mNotificationManagerCompat;
 
   public enum RNType {
     LOCATION,
@@ -39,7 +40,7 @@ public class ReactNativePermissionsModule extends ReactContextBaseJavaModule {
     super(reactContext);
     this.reactContext = reactContext;
     mPermissionsModule = new PermissionsModule(this.reactContext);
-    this.notificationManagerCompat = NotificationManagerCompat.from(reactContext);
+    mNotificationManagerCompat = NotificationManagerCompat.from(this.reactContext);
   }
 
   @Override
@@ -57,8 +58,8 @@ public class ReactNativePermissionsModule extends ReactContextBaseJavaModule {
       return;
     }
 
-    if(permission == 'notification') {
-      if (this.notificationManagerCompat.areNotificationsEnabled()) {
+    if(permission.equals('notification')) {
+      if (mNotificationManagerCompat.areNotificationsEnabled()) {
         promise.resolve("authorized");
       } else {
         promise.resolve("denied");
