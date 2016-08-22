@@ -31,7 +31,7 @@ public class ReactNativePermissionsModule extends ReactContextBaseJavaModule {
     MICROPHONE,
     CONTACTS,
     EVENT,
-    PHOTOS;
+    PHOTO;
   }
 
   public ReactNativePermissionsModule(ReactApplicationContext reactContext) {
@@ -131,7 +131,7 @@ public class ReactNativePermissionsModule extends ReactContextBaseJavaModule {
         return Manifest.permission.READ_CONTACTS;
       case EVENT:
         return Manifest.permission.READ_CALENDAR;
-      case PHOTOS:
+      case PHOTO:
         return Manifest.permission.READ_EXTERNAL_STORAGE;
       default:
         return permission;
