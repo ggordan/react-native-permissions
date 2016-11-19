@@ -8,7 +8,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.PermissionChecker;
-
+import com.facebook.react.bridge.PromiseImpl;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.PromiseImpl;
@@ -102,11 +102,8 @@ public class ReactNativePermissionsModule extends ReactContextBaseJavaModule {
     };
     Callback reject = new Callback() {
       @Override
-      public void invoke(Object... args) {
-        // NOOP
-      }
+      public void invoke(Object... args) {}
     };
-    
     mPermissionsModule.requestPermission(permission, new PromiseImpl(resolve, reject));
   }
 
