@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "React/RCTConvert+RNPStatus.h"
+#import "RCTConvert+RNPStatus.h"
 
 @interface RNPAudioVideo : NSObject
 
