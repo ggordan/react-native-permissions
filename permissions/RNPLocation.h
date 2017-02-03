@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RCTConvert+RNPStatus.h"
+#import "React/RCTConvert+RNPStatus.h"
 
 @interface RNPLocation : NSObject
 
